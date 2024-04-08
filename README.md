@@ -1,4 +1,3 @@
-Sure, here's the updated README file with the Jest script added:
 
 ---
 
