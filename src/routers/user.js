@@ -7,6 +7,14 @@ router.post('/users', async (req, res) => {
 
     try {
         await user.save()
+        
+        // when user is creating he will get welcome email -- need to genarate AuthToken first !
+        // sendWelcomeEmail(user.email, user.name)
+        
+        // to every user creation needs to generate token -- use jsonwebtoken
+        // const token = await user.generateAuthToken()
+
+
         res.status(201).send(user)
     } catch (e) {
         res.status(400).send(e)
@@ -63,6 +71,9 @@ router.patch('/users/:id', async (req, res) => {
 router.delete('/users/:id', async (req, res) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id)
+
+        // when user is deleted he will get goodbye email -- for this no Auth token required
+        // sendCancelationEmail(req.user.email, req.user.name)
 
         if (!user) {
             return res.status(404).send()
