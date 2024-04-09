@@ -1,6 +1,6 @@
 //to do next - create validators for is email is valid in the model/user
 
-
+// Now im not using this yet !
 const sgMail = require('@sendgrid/mail')
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)

@@ -1,3 +1,7 @@
+// to do read about jwt = require(jsonwebtoken)
+
+// Now im not using this yet !
+
 const jwt = require('jsonwebtoken')
 const User = require('../models/user')
 
